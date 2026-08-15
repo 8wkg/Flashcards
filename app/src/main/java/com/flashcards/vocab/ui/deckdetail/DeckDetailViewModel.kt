@@ -28,4 +28,11 @@ class DeckDetailViewModel(
     fun deleteCard(card: Card) {
         viewModelScope.launch { repository.deleteCard(card) }
     }
+
+    fun deleteDeck(onDeleted: () -> Unit) {
+        viewModelScope.launch {
+            deck.value?.let { repository.deleteDeck(it) }
+            onDeleted()
+        }
+    }
 }
