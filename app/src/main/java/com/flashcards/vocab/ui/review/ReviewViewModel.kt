@@ -30,7 +30,7 @@ class ReviewViewModel(
 
     init {
         viewModelScope.launch {
-            val due = repository.getDueCards(deckId)
+            val due = repository.getDueCards(deckId).shuffled()
             _uiState.value = ReviewUiState(queue = due, isLoading = false)
         }
     }
