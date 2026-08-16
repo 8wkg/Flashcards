@@ -30,6 +30,7 @@ import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.key
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -81,12 +82,14 @@ fun ReviewScreen(
                             style = MaterialTheme.typography.labelMedium
                         )
                         Spacer(Modifier.weight(1f))
-                        FlashcardFace(
-                            front = card.front,
-                            back = card.back,
-                            revealed = state.isRevealed,
-                            onClick = { if (!state.isRevealed) viewModel.reveal() }
-                        )
+                        key(card.id) {
+                            FlashcardFace(
+                                front = card.front,
+                                back = card.back,
+                                revealed = state.isRevealed,
+                                onClick = { if (!state.isRevealed) viewModel.reveal() }
+                            )
+                        }
                         Spacer(Modifier.weight(1f))
                         if (state.isRevealed) {
                             GradeButtons(onGrade = viewModel::grade)
