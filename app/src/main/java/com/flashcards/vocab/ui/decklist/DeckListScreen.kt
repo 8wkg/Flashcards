@@ -40,6 +40,7 @@ import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
+import com.flashcards.vocab.BuildConfig
 import com.flashcards.vocab.ViewModelFactory
 import com.flashcards.vocab.data.Deck
 import com.flashcards.vocab.data.FlashcardRepository
@@ -146,6 +147,12 @@ private fun InfoDialog(onDismiss: () -> Unit) {
                     "ciao,hello\ngrazie,thank you\ncasa,house,noun",
                     fontFamily = FontFamily.Monospace,
                     style = MaterialTheme.typography.bodySmall
+                )
+                Text("Version ${BuildConfig.VERSION_NAME}", fontWeight = FontWeight.SemiBold)
+                Text("• v0.2 — Study sessions now shuffle the card order each time")
+                Text(
+                    "• v0.1 — Initial release: import word lists, flip-card review, spaced " +
+                        "repetition, and deck/card deletion"
                 )
             }
         }

@@ -13,8 +13,8 @@ android {
         applicationId = "com.flashcards.vocab"
         minSdk = 26
         targetSdk = 34
-        versionCode = 1
-        versionName = "1.0"
+        versionCode = 2
+        versionName = "0.2"
         vectorDrawables.useSupportLibrary = true
     }
 
@@ -35,6 +35,7 @@ android {
 
     buildFeatures {
         compose = true
+        buildConfig = true
     }
 
     packaging {
