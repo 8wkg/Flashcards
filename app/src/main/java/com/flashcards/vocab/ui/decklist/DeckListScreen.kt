@@ -149,6 +149,7 @@ private fun InfoDialog(onDismiss: () -> Unit) {
                     style = MaterialTheme.typography.bodySmall
                 )
                 Text("Version ${BuildConfig.VERSION_NAME}", fontWeight = FontWeight.SemiBold)
+                Text("• v0.3 — Fixed cards briefly flashing their translation when a new card appears")
                 Text("• v0.2 — Study sessions now shuffle the card order each time")
                 Text(
                     "• v0.1 — Initial release: import word lists, flip-card review, spaced " +
